@@ -8,7 +8,7 @@
     <!-- CSRF Token -->
     <meta name="csrf-token" content="{{ csrf_token() }}">
 
-    <title>{{ 'Boolfolio Base' }}</title>
+    <title>{{ 'Boolfolio Project Typology' }}</title>
 
 
     <!-- Fonts -->

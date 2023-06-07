@@ -8,7 +8,7 @@
     <!-- CSRF Token -->
     <meta name="csrf-token" content="{{ csrf_token() }}">
 
-    <title>{{ 'Boolfolio Base' }}</title>
+    <title>{{ 'Boolfolio Project Typology' }}</title>
 
 
     <!-- Fonts -->
@@ -120,7 +120,8 @@
                                 <a type="button"  href="{{route('admin.projects.create')}}" class="btn btn-lg btn-outline-light ms-2">+</a>
                             </div>
                             <div class="col-12 col-sm-4 col-lg-6 mt-4 order-lg-1">
-                                <h2 class="display-6 fw-medium">BoolFolio Base <span>
+                                <h2 class="display-6 fw-medium">BoolFolio
+                                    Project Typology <span>
                             </div>
                             {{-- <div class="col-12 col-sm-4 col-lg-4 mt-4 mb-4 lh-lg order-lg-2">
                                 <span>Visitatori online</span>
