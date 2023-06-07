@@ -10,6 +10,7 @@ use Illuminate\Database\Eloquent\Relations\HasMany;
 class Type extends Model
 {
     use HasFactory;
+    protected $fillable = ['name', 'slug'];
 
     public function projects():HasMany
     {
