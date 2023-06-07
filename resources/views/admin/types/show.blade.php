@@ -3,7 +3,7 @@
 @section('content')
     <div class="container">
         <div class="row">
-            @foreach ($projects as $project)
+            @forelse ($projects as $project)
                 <div class="col-12 col-md-4 col-lg-3">
                     <div class="card">
                         <div class="card">
@@ -14,7 +14,8 @@
                                 <h3 class="text-uppercase card-title py-3">{{ $project->name }}</h3>
                             </div>
                             <div class="card-body d-flex justify-content-between">
-                                <a class="btn btn-primary" href="{{ route('admin.projects.show', $project->slug) }}">Details</a>
+                                <a class="btn btn-primary"
+                                    href="{{ route('admin.projects.show', $project->slug) }}">Details</a>
                                 <form action="{{ route('admin.projects.destroy', $project->slug) }}" method="POST">
                                     @csrf
                                     @method('DELETE')
@@ -26,7 +27,9 @@
                         </div>
                     </div>
                 </div>
-            @endforeach
+            @empty
+                <div class="alert alert-danger">There isn't any project of this type</div>
+            @endforelse
         </div>
     </div>
 @endsection

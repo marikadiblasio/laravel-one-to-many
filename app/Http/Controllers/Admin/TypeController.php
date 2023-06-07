@@ -7,6 +7,7 @@ use App\Models\Project;
 use App\Http\Requests\StoreTypeRequest;
 use App\Http\Requests\UpdateTypeRequest;
 use App\Http\Controllers\Controller;
+use Illuminate\Support\Str;
 
 class TypeController extends Controller
 {
@@ -25,11 +26,14 @@ class TypeController extends Controller
      * Store a newly created resource in storage.
      *
      * @param  \App\Http\Requests\StoreTypeRequest  $request
-     * @return \Illuminate\Http\Response
      */
     public function store(StoreTypeRequest $request)
     {
-        //
+        $data=$request->validated();
+        $slug=Str::slug($data['name'], '-');
+        $data['slug']=$slug;
+        $type = Type::create($data);
+        return redirect()->route('admin.types.index');
     }
 
     /**
@@ -48,11 +52,14 @@ class TypeController extends Controller
      *
      * @param  \App\Http\Requests\UpdateTypeRequest  $request
      * @param  \App\Models\Type  $type
-     * @return \Illuminate\Http\Response
      */
     public function update(UpdateTypeRequest $request, Type $type)
     {
-        //
+        $data=$request->validated();
+        $slug=Str::slug($data['name'], '-');
+        $data['slug']=$slug;
+        $type->update($data);
+        return redirect()->route('admin.types.index');
     }
 
     /**

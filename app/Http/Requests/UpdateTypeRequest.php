@@ -1,7 +1,7 @@
 <?php
 
 namespace App\Http\Requests;
-
+use Illuminate\Validation\Rule;
 use Illuminate\Foundation\Http\FormRequest;
 
 class UpdateTypeRequest extends FormRequest
@@ -13,7 +13,7 @@ class UpdateTypeRequest extends FormRequest
      */
     public function authorize()
     {
-        return false;
+        return true;
     }
 
     /**
@@ -23,8 +23,13 @@ class UpdateTypeRequest extends FormRequest
      */
     public function rules()
     {
-        return [
-            //
-        ];
+        return
+            [
+                'name'=> [
+                    'string',
+                    'max:50',
+                    Rule::unique('types')->ignore($this->type)
+                ]
+                ];
     }
 }

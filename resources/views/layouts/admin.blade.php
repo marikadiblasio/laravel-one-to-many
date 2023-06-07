@@ -93,14 +93,16 @@
                                 class="fa-solid me-1 fa-house"></i><span class="d-none d-md-inline">Home</span></a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link text-white" aria-current="page" role="button" href="{{route('admin.projects.index')}}">
+                        <a class="nav-link text-white" aria-current="page" role="button"
+                            href="{{ route('admin.projects.index') }}">
                             <i class="fa-solid me-1 fa-code"></i>
                             <span class="d-none d-md-inline">Projects</span>
                         </a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link text-white" aria-current="page" role="button" href="{{route('admin.types.index')}}"><i
-                                class="fa-solid me-1 fa-tag"></i><span class="d-none d-md-inline">Type</span></a>
+                        <a class="nav-link text-white" aria-current="page" role="button"
+                            href="{{ route('admin.types.index') }}"><i class="fa-solid me-1 fa-tag"></i><span
+                                class="d-none d-md-inline">Type</span></a>
                     </li>
                 </ul>
                 <ul class="ms-h120px mt-auto nav ">
@@ -116,8 +118,9 @@
                     <div class="container-fluid pb-4">
                         <div class="row justify-content-between">
                             <div class="col-12 col-sm-4 col-lg-2 mt-4 order-lg-3">
-                                <span>Nuovo Progetto</span>
-                                <a type="button"  href="{{route('admin.projects.create')}}" class="btn btn-lg btn-outline-light ms-2">+</a>
+                                <span>Add Project</span>
+                                <a type="button" href="{{ route('admin.projects.create') }}"
+                                    class="btn btn-lg btn-outline-light ms-2">+</a>
                             </div>
                             <div class="col-12 col-sm-4 col-lg-6 mt-4 order-lg-1">
                                 <h2 class="display-6 fw-medium">BoolFolio
