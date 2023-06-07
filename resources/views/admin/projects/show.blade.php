@@ -8,6 +8,9 @@
             </div>
             <div class="card-body">
                 <h3 class="text-uppercase card-title py-3">{{ $project->name }}</h3>
+                @if($project->type_id)
+                    <div>Project type: <span class="text-uppercase">{{$project->type->name}}</span></div>
+                @endif
                 <a class="btn btn-primary" href="{{ $project->url }}">View GitHub</a>
                 <p class="card-text">{!! $project->description !!}</p>
             </div>

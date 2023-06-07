@@ -15,6 +15,7 @@
         <th scope="col">ID</th>
         <th scope="col">Name</th>
         <th scope="col">Image</th>
+        <th scope="col">Type</th>
         <th scope="col" class="d-none d-sm-block">Created</th>
         <th scope="col">Actions</th>
       </tr>
@@ -25,6 +26,7 @@
                 <th scope="row">{{ $project->id}}</th>
                 <td>{{ $project->name}}</td>
                 <td><img class="my-table-img img-thumbnail" src="{{ $project->image}}" alt="{{ $project->name}}"></td>
+                <td>{{$project->type_id ? $project->type->name : 'Unselected'}}</td>
                 <td  class="d-none d-sm-table-cell">{{ $project->created_at}}</td>
                 <td>
                     <a class="text-dark-blue" href="{{route('admin.projects.show', $project->slug)}}"><i class="fa-solid fa-eye me-2"></i></a>
